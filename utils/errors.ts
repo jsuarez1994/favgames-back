@@ -24,6 +24,10 @@ export enum MIDDLEWARE_ERRORS {
     TOKEN_FORMAT        = 'MIDDTOKEN0003',
     // Email mal formado
     EMAIL_FORMAT        = 'MIDDEMAIL0001',
+    // Email vacio
+    EMAIL_EMPTY         = 'MIDDEMAIL0002',
     // Password mal formado
     PASSWORD_FORMAT     = 'MIDDEPASSWORD0001',
+    // Nombre Apellido
+    NAME_SURNAME_EMPTY  = 'MIDDENAME0001',
 }

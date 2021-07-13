@@ -37,6 +37,7 @@ const cors_1 = __importDefault(require("cors"));
 const config_1 = require("../database/config");
 const base_1 = require("../routes/base");
 const authPath = __importStar(require("../routes/auth.route"));
+const gamePath = __importStar(require("../routes/game.route"));
 class Server {
     constructor() {
         // Configuration Server
@@ -75,6 +76,7 @@ class Server {
      */
     routes() {
         this.app.use(base_1.BASE_PATH.AUTH, authPath.router);
+        this.app.use(base_1.BASE_PATH.GAME, gamePath.router);
     }
 }
 exports.Server = Server;

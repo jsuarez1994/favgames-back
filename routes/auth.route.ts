@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { login, register, googleSign } from '../controllers/auth';
-import { middlewareLogin } from "../middlewares/auth";
+import { middlewareLogin, middlewareRegister,middlewareGoogleSign } from "../middlewares/auth";
 
 
 export const router = Router();
@@ -9,13 +9,14 @@ export const router = Router();
 
 /**
  * Path: /registrer
- * Middlewares: TODO: Hacer metodos
+ * Middlewares: middlewareRegister
  * Controller:
  *      name: registrer
  *      description: Registro de datos necesarios dar 
  *                   alta usuario   
  */
  router.post(   '/registrer',
+                middlewareRegister,
                 register);
 
 /**
@@ -31,10 +32,11 @@ router.post(    '/login',
 
 /**
  * Path: /googleSign
- * Middlewares: TODO: Hacer metodos
+ * Middlewares: middlewareGoogleSign
  * Controller:
  *      name: googleSign
  *      description: Logeo usuario mediante credenciales de google   
  */
-router.post(    '/googleSign',   
+router.post(    '/googleSign',
+                middlewareGoogleSign,
                 googleSign);

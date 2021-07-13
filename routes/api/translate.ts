@@ -1,0 +1,1 @@
+export const API_TRANSLATE:string = 'https://google-translate1.p.rapidapi.com/language/translate/v2'

@@ -3,6 +3,7 @@ import cors from 'cors';
 import { DatabaseConnection } from '../database/config';
 import { BASE_PATH } from '../routes/base';
 import * as authPath from '../routes/auth.route';
+import * as gamePath from '../routes/game.route';
 
 export class Server {
 
@@ -55,6 +56,7 @@ export class Server {
      */
     routes() {
         this.app.use( BASE_PATH.AUTH, authPath.router);
+        this.app.use( BASE_PATH.GAME, gamePath.router);
     }
 
 }
