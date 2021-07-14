@@ -1,7 +1,8 @@
 import { Request, Response } from 'express';
 import { API_GAMES_PATH, QUERY_API_GAMES, API_AUTH_GAMES } from '../routes/api/games';
+import { API_TRANSLATE } from '../routes/api/translate';
 import { HTTP_METHOD } from '../utils/constants';
-import { callApi } from '../utils/helpers/call-apis';
+import { callApi, callApiTranslate } from '../utils/helpers/call-apis';
 
 
 /**
@@ -26,10 +27,19 @@ export async function getAllGames (request: Request, response: Response) {
         'Client-ID': clientId,
         'Authorization': `Bearer ${tokenApiGame}`
     }
+    // Obtenemos los juegos
+    let result: Games[] = await callApi(API_GAMES_PATH, HTTP_METHOD.POST, header,body);
 
-
-    const result: Games[] = await callApi(API_GAMES_PATH, HTTP_METHOD.POST, header,body);
     return response.status(200).json(result);
+}
+
+//TODO: 502 Bad Gateway
+const translateSummary = async (data: Games[]) => {
+    let arrayGames:string[] = data.map(game => `${game.id}:${game.summary}`);
+    const responseTranslate:any =  await callApiTranslate(arrayGames.toString());
+
+    console.log('###### TRANLATE ######:',responseTranslate);
+
 }
 
 const getTokenApiGame = async () => {

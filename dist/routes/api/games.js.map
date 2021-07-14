@@ -1,1 +1,1 @@
-{"version":3,"file":"games.js","sourceRoot":"","sources":["../../../routes/api/games.ts"],"names":[],"mappings":";;;AAAa,QAAA,cAAc,GAAU,qHAAqH,CAAA;AAE7I,QAAA,cAAc,GAAU,+BAA+B,CAAC;AACxD,QAAA,eAAe,GAAU,oJAAoJ,CAAA"}
+{"version":3,"file":"games.js","sourceRoot":"","sources":["../../../routes/api/games.ts"],"names":[],"mappings":";;;AAAa,QAAA,cAAc,GAAU,qHAAqH,CAAA;AAE7I,QAAA,cAAc,GAAU,+BAA+B,CAAC;AACxD,QAAA,eAAe,GAAU,mJAAmJ,CAAA"}

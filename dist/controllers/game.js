@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.allGames = void 0;
+exports.getAllGames = void 0;
 const games_1 = require("../routes/api/games");
 const constants_1 = require("../utils/constants");
 const call_apis_1 = require("../utils/helpers/call-apis");
@@ -21,7 +21,7 @@ const call_apis_1 = require("../utils/helpers/call-apis");
  * @param response
  * @returns games: Games[]
  */
-function allGames(request, response) {
+function getAllGames(request, response) {
     return __awaiter(this, void 0, void 0, function* () {
         const { page } = request.body;
         const body = games_1.QUERY_API_GAMES.replace('{{page}}', page || 0);
@@ -34,11 +34,18 @@ function allGames(request, response) {
             'Client-ID': clientId,
             'Authorization': `Bearer ${tokenApiGame}`
         };
-        const result = yield call_apis_1.callApi(games_1.API_GAMES_PATH, constants_1.HTTP_METHOD.POST, header, body);
+        // Obtenemos los juegos
+        let result = yield call_apis_1.callApi(games_1.API_GAMES_PATH, constants_1.HTTP_METHOD.POST, header, body);
         return response.status(200).json(result);
     });
 }
-exports.allGames = allGames;
+exports.getAllGames = getAllGames;
+//TODO: 502 Bad Gateway
+const translateSummary = (data) => __awaiter(void 0, void 0, void 0, function* () {
+    let arrayGames = data.map(game => `${game.id}:${game.summary}`);
+    const responseTranslate = yield call_apis_1.callApiTranslate(arrayGames.toString());
+    console.log('###### TRANLATE ######:', responseTranslate);
+});
 const getTokenApiGame = () => __awaiter(void 0, void 0, void 0, function* () {
     let url = games_1.API_AUTH_GAMES;
     url = url.replace('{{client-id}}', (process.env.CLIENT_ID_API_GAMES || ''));

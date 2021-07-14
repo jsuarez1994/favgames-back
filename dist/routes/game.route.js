@@ -14,5 +14,5 @@ exports.router = express_1.Router();
  *      description: Registro de datos necesarios dar
  *                   alta usuario
  */
-exports.router.get('/getAll', game_2.middlewareAllGames, game_1.allGames);
+exports.router.get('/getAll', game_2.middlewareAllGames, game_1.getAllGames);
 //# sourceMappingURL=game.route.js.map
