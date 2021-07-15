@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MIDDLEWARE_ERRORS = exports.USER_ERRORS = void 0;
+exports.MIDDLEWARE_ERRORS = exports.FAVOURITE_GAMES_ERRORS = exports.USER_ERRORS = void 0;
 var USER_ERRORS;
 (function (USER_ERRORS) {
     // Email requerido
@@ -18,6 +18,21 @@ var USER_ERRORS;
     // Usuario no activo
     USER_ERRORS["ACTIVE_FALSE"] = "USACTIVE0001";
 })(USER_ERRORS = exports.USER_ERRORS || (exports.USER_ERRORS = {}));
+var FAVOURITE_GAMES_ERRORS;
+(function (FAVOURITE_GAMES_ERRORS) {
+    // Id requerido
+    FAVOURITE_GAMES_ERRORS["ID_REQUIRED"] = "FVID0001";
+    // Name requerido
+    FAVOURITE_GAMES_ERRORS["NAME_REQUIRED"] = "FVNAME0001";
+    // Name requerido
+    FAVOURITE_GAMES_ERRORS["RATING_REQUIRED"] = "FVRATING0001";
+    // Name requerido
+    FAVOURITE_GAMES_ERRORS["SUMMARY_REQUIRED"] = "FVSUMMARY0001";
+    // User requerido
+    FAVOURITE_GAMES_ERRORS["USER_REQUIRED"] = "FVUSER0001";
+    // Juego no encontrado
+    FAVOURITE_GAMES_ERRORS["GAME_NOT_FOUND"] = "FVGNF0001";
+})(FAVOURITE_GAMES_ERRORS = exports.FAVOURITE_GAMES_ERRORS || (exports.FAVOURITE_GAMES_ERRORS = {}));
 var MIDDLEWARE_ERRORS;
 (function (MIDDLEWARE_ERRORS) {
     // TOKEN  requerido

@@ -7,12 +7,35 @@ const game_2 = require("../middlewares/game");
 exports.router = express_1.Router();
 // Path - Controllers
 /**
- * Path: /registrer
- * Middlewares: TODO: Hacer metodos
+ * Path: /getAll
+ * Middlewares: middlewareAllGames
  * Controller:
- *      name: registrer
- *      description: Registro de datos necesarios dar
- *                   alta usuario
+ *          name:           getAllGames
+ *          description:    Obtenemos todos los juegos paginados
  */
 exports.router.get('/getAll', game_2.middlewareAllGames, game_1.getAllGames);
+/**
+ * Path: /save
+ * Middlewares: middlewareSave
+ * Controller:
+ *          name:           save
+ *          description:    Guardamos relacion usuario - juego
+ */
+exports.router.post('/save', game_2.middlewareSave, game_1.save);
+/**
+ * Path: /getByUser
+ * Middlewares: middlewaregetByUser
+ * Controller:
+ *          name:           getByUser
+ *          description:    Obtenemos los juegos favoritos del usuario logado
+ */
+exports.router.get('/getByUser', game_2.middlewareGetByUser, game_1.getByUser);
+/**
+ * Path: /getByUser
+ * Middlewares: middlewaregetByUser
+ * Controller:
+ *          name:           getByUser
+ *          description:    Obtenemos los juegos favoritos del usuario logado
+ */
+exports.router.delete('/delete', game_2.middlewaregetDelete, game_1.deleteGame);
 //# sourceMappingURL=game.route.js.map

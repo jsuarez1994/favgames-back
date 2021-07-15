@@ -5,3 +5,5 @@ export enum HTTP_METHOD {
     PATCH   = 'PATCH',
     DELETE  = 'DELETE',
 };
+
+export const urlScreenshots = '//images.igdb.com/igdb/image/upload/t_thumb';

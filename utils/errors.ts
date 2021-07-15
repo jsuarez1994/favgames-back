@@ -10,9 +10,24 @@ export enum USER_ERRORS {
     // SurName requerido
     SURNAME_REQUIRED    = 'USSURNAME0001',
     // Login fail con credentiales
-    LOGIN_FAIL    = 'USLOGIN0001',
+    LOGIN_FAIL          = 'USLOGIN0001',
     // Usuario no activo
-    ACTIVE_FALSE    = 'USACTIVE0001',
+    ACTIVE_FALSE        = 'USACTIVE0001',
+}
+
+export enum FAVOURITE_GAMES_ERRORS {
+    // Id requerido
+    ID_REQUIRED         = 'FVID0001',
+    // Name requerido
+    NAME_REQUIRED       = 'FVNAME0001',
+    // Name requerido
+    RATING_REQUIRED     = 'FVRATING0001',
+    // Name requerido
+    SUMMARY_REQUIRED    = 'FVSUMMARY0001',
+    // User requerido
+    USER_REQUIRED       = 'FVUSER0001',
+    // Juego no encontrado
+    GAME_NOT_FOUND      = 'FVGNF0001',
 }
 
 export enum MIDDLEWARE_ERRORS {

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HTTP_METHOD = void 0;
+exports.urlScreenshots = exports.HTTP_METHOD = void 0;
 var HTTP_METHOD;
 (function (HTTP_METHOD) {
     HTTP_METHOD["POST"] = "POST";
@@ -10,4 +10,5 @@ var HTTP_METHOD;
     HTTP_METHOD["DELETE"] = "DELETE";
 })(HTTP_METHOD = exports.HTTP_METHOD || (exports.HTTP_METHOD = {}));
 ;
+exports.urlScreenshots = '//images.igdb.com/igdb/image/upload/t_thumb';
 //# sourceMappingURL=constants.js.map
